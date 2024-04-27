@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        h1 {
+            color: #333333;
+        }
+        #result-container {
+            margin-top: 50px;
+        }
+        #result-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        #back-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        #back-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Classification Result</h1>
+    <div id="result-container">
+        <p id="result-text">Prediction: {{ prediction }}</p>
+        <a href="/" id="back-btn">Back to Upload</a>
+    </div>
+</body>
+</html>

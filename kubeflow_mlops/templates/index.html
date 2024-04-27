@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        h1 {
+            color: #333333;
+        }
+        #upload-container {
+            margin-top: 50px;
+        }
+        #upload-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #upload-btn:hover {
+            background-color: #45a049;
+        }
+        #upload-input {
+            display: none;
+        }
+        #upload-label {
+            padding: 10px 20px;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Classification</h1>
+    <div id="upload-container">
+        <form method="POST" enctype="multipart/form-data" id="upload-form">
+            <input type="file" name="file" id="upload-input">
+            <label for="upload-input" id="upload-label">Choose Image</label>
+            <button type="submit" id="upload-btn">Upload</button>
+        </form>
+    </div>
+    {% if message %}
+    <p style="color: red; font-weight: bold;">{{ message }}</p>
+    {% endif %}
+</body>
+</html>
