@@ -9,14 +9,16 @@
       "id": "primary",
       "nodes": [
         {
-          "id": "2192c989-50c3-43a4-ad32-c1cc99c0b6fe",
+          "id": "4872a764-a598-4cff-b8c7-7b2189cebbe0",
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
             "component_parameters": {
               "dependencies": [],
-              "include_subdirectories": false,
-              "outputs": [],
+              "include_subdirectories": true,
+              "outputs": [
+                "fictional-character-battle-outcome-prediction.zip"
+              ],
               "env_vars": [],
               "kubernetes_pod_annotations": [],
               "kubernetes_pod_labels": [],
@@ -29,9 +31,9 @@
             "label": "",
             "ui_data": {
               "label": "data-fetch.ipynb",
-              "image": "/notebook/ai1/fifth/static/elyra/notebook.svg",
-              "x_pos": 50,
-              "y_pos": 50,
+              "image": "/notebook/nageshrathodiot-dev/ai5/static/elyra/notebook.svg",
+              "x_pos": 184,
+              "y_pos": 81,
               "description": "Run notebook file"
             }
           },
@@ -65,14 +67,16 @@
           ]
         },
         {
-          "id": "c499a6e6-7007-4d2b-943c-8507e028da62",
+          "id": "a80477cc-9f0c-4a6a-9101-d93a7d28a2a9",
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
             "component_parameters": {
               "dependencies": [],
-              "include_subdirectories": false,
-              "outputs": [],
+              "include_subdirectories": true,
+              "outputs": [
+                "models/battle.pickle"
+              ],
               "env_vars": [],
               "kubernetes_pod_annotations": [],
               "kubernetes_pod_labels": [],
@@ -80,14 +84,14 @@
               "kubernetes_shared_mem_size": {},
               "kubernetes_tolerations": [],
               "mounted_volumes": [],
-              "filename": "train-model.ipynb"
+              "filename": "train-evaluate-model.ipynb"
             },
             "label": "",
             "ui_data": {
-              "label": "train-model.ipynb",
-              "image": "/notebook/ai1/fifth/static/elyra/notebook.svg",
-              "x_pos": 330,
-              "y_pos": 165,
+              "label": "train-evaluate-model.ipynb",
+              "image": "/notebook/nageshrathodiot-dev/ai5/static/elyra/notebook.svg",
+              "x_pos": 425,
+              "y_pos": 155,
               "description": "Run notebook file"
             }
           },
@@ -105,8 +109,8 @@
               },
               "links": [
                 {
-                  "id": "3a6f98ed-a4af-4f4e-9885-bfc681a992cb",
-                  "node_id_ref": "2192c989-50c3-43a4-ad32-c1cc99c0b6fe",
+                  "id": "89fe0eb1-608a-4c66-a734-38ba7d06de26",
+                  "node_id_ref": "4872a764-a598-4cff-b8c7-7b2189cebbe0",
                   "port_id_ref": "outPort"
                 }
               ]
@@ -128,7 +132,7 @@
           ]
         },
         {
-          "id": "6c118db5-bf36-4ce0-b157-1dc73b58b023",
+          "id": "b19ba867-5536-44c0-bda6-2548a8ce9f34",
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
@@ -144,13 +148,13 @@
               "kubernetes_shared_mem_size": {},
               "kubernetes_tolerations": [],
               "mounted_volumes": [],
-              "filename": "save_and_store_model.ipynb"
+              "filename": "store-model.ipynb"
             },
             "ui_data": {
-              "label": "save_and_store_model.ipynb",
-              "image": "/notebook/ai1/fifth/static/elyra/notebook.svg",
-              "x_pos": 1052,
-              "y_pos": 333,
+              "label": "store-model.ipynb",
+              "image": "/notebook/nageshrathodiot-dev/ai5/static/elyra/notebook.svg",
+              "x_pos": 709,
+              "y_pos": 223,
               "description": "Run notebook file"
             }
           },
@@ -168,71 +172,8 @@
               },
               "links": [
                 {
-                  "id": "1a9103ee-664f-4459-956a-9b0654797ad8",
-                  "node_id_ref": "9c314017-8533-4de7-9327-696497101736",
-                  "port_id_ref": "outPort"
-                }
-              ]
-            }
-          ],
-          "outputs": [
-            {
-              "id": "outPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Output Port"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": "9c314017-8533-4de7-9327-696497101736",
-          "type": "execution_node",
-          "op": "execute-notebook-node",
-          "app_data": {
-            "label": "",
-            "component_parameters": {
-              "dependencies": [],
-              "include_subdirectories": false,
-              "outputs": [],
-              "env_vars": [],
-              "kubernetes_pod_annotations": [],
-              "kubernetes_pod_labels": [],
-              "kubernetes_secrets": [],
-              "kubernetes_shared_mem_size": {},
-              "kubernetes_tolerations": [],
-              "mounted_volumes": [],
-              "filename": "Evaluate_model.ipynb"
-            },
-            "ui_data": {
-              "label": "Evaluate_model.ipynb",
-              "image": "/notebook/ai1/fifth/static/elyra/notebook.svg",
-              "x_pos": 660,
-              "y_pos": 238,
-              "description": "Run notebook file"
-            }
-          },
-          "inputs": [
-            {
-              "id": "inPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Input Port"
-                }
-              },
-              "links": [
-                {
-                  "id": "d80c1654-849b-4a79-8e80-38934cf8e5ab",
-                  "node_id_ref": "c499a6e6-7007-4d2b-943c-8507e028da62",
+                  "id": "013bfc89-98cf-4478-b58c-e1c3322ceb3f",
+                  "node_id_ref": "a80477cc-9f0c-4a6a-9101-d93a7d28a2a9",
                   "port_id_ref": "outPort"
                 }
               ]
@@ -261,17 +202,17 @@
         "version": 8,
         "runtime_type": "KUBEFLOW_PIPELINES",
         "properties": {
-          "name": "fifth",
+          "name": "openshift-pipeline",
           "runtime": "Data Science Pipelines",
           "pipeline_defaults": {
             "kubernetes_shared_mem_size": {},
-            "mounted_volumes": [],
-            "kubernetes_tolerations": [],
             "kubernetes_pod_annotations": [],
             "kubernetes_pod_labels": [],
+            "kubernetes_tolerations": [],
+            "mounted_volumes": [],
             "env_vars": [],
             "kubernetes_secrets": [],
-            "runtime_image": "quay.io/modh/runtime-images@sha256:b5656ca22d749812ac1a72f8a777353622d154f4abf3b74b1086226f02cf9719"
+            "runtime_image": "quay.io/modh/runtime-images@sha256:4e3bac6151402e97e79711e262b396eb515e70ca9217a48103a6cfb96a99fde2"
           }
         }
       },
