@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: build-flask-app
+spec:
+  params:
+    - name: imageName
+      type: string
+    - name: gitSource
+      type: string
+  steps:
+    - name: create-build-config
+      image: 'quay.io/openshift/origin-cli:latest'
+      script: |
+        oc new-build --binary --name=$(params.imageName) -l app=$(params.imageName) --strategy=docker
+    - name: start-build
+      image: 'quay.io/openshift/origin-cli:latest'
+      workingDir: /workspace/source
+      script: |
+        oc start-build $(params.imageName) --from-dir=. --dockerfile=Dockerfile --follow

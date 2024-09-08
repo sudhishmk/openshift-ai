@@ -1,0 +1,12 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: flask-app-pipeline-run
+spec:
+  pipelineRef:
+    name: flask-app-pipeline
+  params:
+    - name: imageName
+      value: flask-app
+    - name: gitSource
+      value: https://github.com/redhat-developer-demos/openshift-ai.git
