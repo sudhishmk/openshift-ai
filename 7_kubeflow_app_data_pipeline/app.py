@@ -84,6 +84,9 @@ def index():
     
     return render_template('index.html', label=None, image_url=None)
 
+# if __name__ == "__main__":
+#     app.run(debug=False, port=5050, use_reloader=False, use_debugger=False)
+
 if __name__ == "__main__":
-    app.run(debug=False, port=5050, use_reloader=False, use_debugger=False)
+    app.run(debug=True, port=5050)
 
