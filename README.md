@@ -1,1 +1,1 @@
-# openshift-ai
+# openshift-ai examples
